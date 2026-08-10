@@ -1,0 +1,25 @@
+/node_modules
+/.next
+/coverage
+/tmp
+*.log
+*.tsbuildinfo
+.DS_Store
+
+.vercel
+/.tools
+/.agents
+/.pnpm-store
+/artifact_work
+
+# Unrelated quote-calculator workspace files
+/public/domnick-seeds-logo.jpg
+/public/sell-sheets
+/src/components/comparison-table.tsx
+/src/components/pdf-viewer.tsx
+/src/components/print-summary.tsx
+/src/components/program-card.tsx
+/src/components/quote-calculator.tsx
+/src/config
+/src/lib/calculations.ts
+/src/lib/calculations.test.ts
