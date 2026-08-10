@@ -18,10 +18,6 @@ function formatDate(date: string | null, full = false) {
   return (full ? longDate : shortDate).format(value);
 }
 
-function statusClass(status: string) {
-  return status.toLowerCase().replaceAll(" ", "-");
-}
-
 export function SilageDashboard({ data }: { data: SilageDashboardData }) {
   const [query, setQuery] = useState("");
 
@@ -80,7 +76,7 @@ export function SilageDashboard({ data }: { data: SilageDashboardData }) {
 
             <div className="compact-table-wrap">
               <table className="compact-table">
-                <thead><tr><th>#</th><th>Field / hybrid</th><th className="optional-col">Planted</th><th>GDU progress</th><th>Check target</th><th className="optional-col">Status</th></tr></thead>
+                <thead><tr><th>#</th><th>Field / hybrid</th><th className="optional-col">Planted</th><th>GDU progress</th><th>Check target</th></tr></thead>
                 <tbody>
                   {filteredFields.map((field) => (
                     <tr key={field.id}>
@@ -89,7 +85,6 @@ export function SilageDashboard({ data }: { data: SilageDashboardData }) {
                       <td className="optional-col"><strong>{formatDate(field.plantingDate)}</strong><small>{field.blackLayerGdu.toLocaleString()} BL</small></td>
                       <td className="compact-progress"><div><strong>{field.currentGdu.toLocaleString()}</strong><span>/ {field.chopTargetGdu.toLocaleString()}</span></div><div className="mini-track"><i style={{ width: `${field.progressPercent}%` }} /></div><small>{field.remainingToChop} left</small></td>
                       <td><strong className="check-date">{formatDate(field.projectedChopDate)}</strong><small>Black layer {formatDate(field.projectedBlackLayerDate)}</small></td>
-                      <td className="optional-col"><span className={`compact-status compact-status--${statusClass(field.status)}`}>{field.status}</span><small>{field.projectionBasis === "14-day forecast" ? "Forecast" : "Forecast + normals"}</small></td>
                     </tr>
                   ))}
                 </tbody>
