@@ -12,35 +12,35 @@ const LOCATION = {
   station: "Morris Municipal Airport (MOX)",
 };
 
-const FALLBACK_OBSERVED_THROUGH = "2026-08-09";
-const FALLBACK_REPORT_DATE = "2026-08-10";
+const FALLBACK_OBSERVED_THROUGH = "2026-08-19";
+const FALLBACK_REPORT_DATE = "2026-08-20";
 const FALLBACK_GDU_BY_PLANTING_DATE: Record<string, number> = {
-  "2026-05-02": 1790.5,
-  "2026-05-04": 1770.5,
-  "2026-05-05": 1765,
-  "2026-05-06": 1765,
-  "2026-05-07": 1765,
-  "2026-05-08": 1759.5,
-  "2026-05-09": 1748,
-  "2026-05-11": 1739,
-  "2026-05-12": 1727.5,
+  "2026-05-02": 1991.7,
+  "2026-05-04": 1971.9,
+  "2026-05-05": 1966.5,
+  "2026-05-06": 1966.5,
+  "2026-05-07": 1966.5,
+  "2026-05-08": 1961.1,
+  "2026-05-09": 1949.4,
+  "2026-05-11": 1940.4,
+  "2026-05-12": 1928.7,
 };
 
 const FALLBACK_FORECAST: DailyWeather[] = [
-  { date: "2026-08-10", high: 79.6, low: 56.0, gdu: 18.0, kind: "forecast" },
-  { date: "2026-08-11", high: 84.0, low: 63.8, gdu: 24.0, kind: "forecast" },
-  { date: "2026-08-12", high: 86.9, low: 62.6, gdu: 24.5, kind: "forecast" },
-  { date: "2026-08-13", high: 80.2, low: 60.6, gdu: 20.5, kind: "forecast" },
-  { date: "2026-08-14", high: 78.8, low: 57.2, gdu: 18.0, kind: "forecast" },
-  { date: "2026-08-15", high: 77.8, low: 63.3, gdu: 20.5, kind: "forecast" },
-  { date: "2026-08-16", high: 82.0, low: 56.9, gdu: 19.5, kind: "forecast" },
-  { date: "2026-08-17", high: 86.3, low: 57.1, gdu: 21.5, kind: "forecast" },
-  { date: "2026-08-18", high: 93.9, low: 64.1, gdu: 25.0, kind: "forecast" },
-  { date: "2026-08-19", high: 90.9, low: 65.7, gdu: 26.0, kind: "forecast" },
-  { date: "2026-08-20", high: 80.9, low: 65.9, gdu: 23.5, kind: "forecast" },
-  { date: "2026-08-21", high: 65.6, low: 56.6, gdu: 11.5, kind: "forecast" },
-  { date: "2026-08-22", high: 75.7, low: 56.1, gdu: 16.0, kind: "forecast" },
-  { date: "2026-08-23", high: 77.8, low: 58.3, gdu: 18.0, kind: "forecast" },
+  { date: "2026-08-20", high: 84.8, low: 61.7, gdu: 23.25, kind: "forecast" },
+  { date: "2026-08-21", high: 78.4, low: 60.2, gdu: 19.3, kind: "forecast" },
+  { date: "2026-08-22", high: 82.2, low: 58.1, gdu: 20.15, kind: "forecast" },
+  { date: "2026-08-23", high: 84.0, low: 54.3, gdu: 19.15, kind: "forecast" },
+  { date: "2026-08-24", high: 88.3, low: 60.6, gdu: 23.3, kind: "forecast" },
+  { date: "2026-08-25", high: 91.4, low: 62.9, gdu: 24.45, kind: "forecast" },
+  { date: "2026-08-26", high: 82.7, low: 57.8, gdu: 20.25, kind: "forecast" },
+  { date: "2026-08-27", high: 91.1, low: 58.4, gdu: 22.2, kind: "forecast" },
+  { date: "2026-08-28", high: 103.9, low: 65.1, gdu: 25.55, kind: "forecast" },
+  { date: "2026-08-29", high: 98.0, low: 64.8, gdu: 25.4, kind: "forecast" },
+  { date: "2026-08-30", high: 93.7, low: 61.1, gdu: 23.55, kind: "forecast" },
+  { date: "2026-08-31", high: 84.9, low: 62.6, gdu: 23.75, kind: "forecast" },
+  { date: "2026-09-01", high: 89.2, low: 60.1, gdu: 23.05, kind: "forecast" },
+  { date: "2026-09-02", high: 86.0, low: 63.8, gdu: 24.9, kind: "forecast" },
 ];
 
 export type SilageDashboardData = {

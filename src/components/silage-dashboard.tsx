@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
 
 import type { SilageDashboardData } from "@/lib/weather";
 import heroImage from "../../public/riverview-silage-hero.jpg";
@@ -19,7 +20,13 @@ function formatDate(date: string | null, full = false) {
 }
 
 export function SilageDashboard({ data }: { data: SilageDashboardData }) {
+  const router = useRouter();
   const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    const refreshTimer = window.setInterval(() => router.refresh(), 60 * 60 * 1000);
+    return () => window.clearInterval(refreshTimer);
+  }, [router]);
 
   const filteredFields = useMemo(() => {
     const search = query.trim().toLowerCase();
@@ -31,7 +38,7 @@ export function SilageDashboard({ data }: { data: SilageDashboardData }) {
   const averageGdu = Math.round(data.projections.reduce((sum, field) => sum + field.currentGdu, 0) / data.projections.length);
   const forecastWeek = data.forecastDays.slice(0, 7);
   const maxGdu = Math.max(...forecastWeek.map((day) => day.gdu), 1);
-  const liveLabel = data.dataStatus === "live" ? "Live outlook" : data.dataStatus === "forecast-fallback" ? "Observed + normal outlook" : "Saved Aug. 10 outlook";
+  const liveLabel = data.dataStatus === "live" ? "Live outlook" : data.dataStatus === "forecast-fallback" ? "Observed + normal outlook" : `Saved ${formatDate(data.reportDate)} outlook`;
 
   return (
     <main className="app-frame">
